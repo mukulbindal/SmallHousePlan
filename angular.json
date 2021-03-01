@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "057fa231-ef42-4287-9dc9-819052a889c0"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -17,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/civilApp",
+            "outputPath": "www",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -25,9 +28,16 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "bootstrap-icons.svg",
+                "input": "./node_modules/bootstrap-icons/",
+                "output": "/"
+              }
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
+              "./node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "src/styles.css"
             ],
             "scripts": []

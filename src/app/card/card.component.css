@@ -1,0 +1,23 @@
+.card-main{
+    box-shadow: 3px 3px 3px #ccc;
+    border-radius: 10%;
+    padding: 10px;
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 48vw;
+    height: 170px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+p{
+    font-size: 11px;
+}
+img{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+}

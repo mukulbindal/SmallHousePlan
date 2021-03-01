@@ -1,0 +1,92 @@
+<div class="adjust">
+    <form [formGroup]="form" (submit)="onSubmit()">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Enter Slab Width</label>
+            <div class="input-group-append">
+                <input type="number" class="form-control" formControlName="wallHeight" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Slab Width">
+                <div class="input-group-append">
+                    <select name="" id="" formControlName="heightUnit" class="form-control">
+                        <option value="m" [selected]="true">Meter</option>
+                        <option value="f">Feet</option>
+                    </select>
+                </div>
+            </div>
+            <small class="form-text text-danger" *ngIf="form.controls.wallHeight.touched && form.controls.wallHeight.errors">Enter numerics only</small>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Enter Slab Length</label>
+            <div class="input-group-append">
+                <input type="number" class="form-control" formControlName="wallLength" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Slab Length">
+                <div class="input-group-append">
+                    <select name="" id="" formControlName="lengthUnit" class="form-control">
+                        <option value="m" [selected]="true">Meter</option>
+                        <option value="f">Feet</option>
+                    </select>
+                </div>
+            </div>
+            <small class="form-text text-danger" *ngIf="form.controls.wallLength.touched && form.controls.wallLength.errors">Enter numerics only</small>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Slab Thickness</label>
+            <div class="input-group-append">
+                <select class="form-control col-12" name="" id="" formControlName="wallThickness">
+                    <option value="10" [selected]="true">10 cm</option>
+                    <option value="12">12 cm</option>
+                </select>
+            </div>
+            <small class="form-text text-danger" *ngIf="form.controls.wallThickness.touched && form.controls.wallThickness.errors">Enter numerics only</small>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">MIX Ratio</label>
+            <div class="input-group-append">
+                <select class="form-control col-12" name="" id="" formControlName="mortarRatio">
+                    <option value="[1.5,3]" [selected]="true">1:1.5:3</option>
+                    <option value="[2,2]">1:2:2</option>
+                    <option value="[2,4]">1:2:4</option>
+                </select>
+            </div>
+            <small class="form-text text-danger" *ngIf="form.controls.mortarRatio.touched && form.controls.mortarRatio.errors">Enter numerics only</small>
+        </div>
+
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Diameter of Bar</label>
+            <div class="input-group-append">
+                <select class="form-control col-12" name="" id="" formControlName="diameterOfBar">
+                    <option value="10" [selected]="true">10 mm / 3 soot</option>
+                    <option value="12">12 mm / 4 soot</option>
+                    <!-- <option value="16">16 mm / 5 soot</option>
+                    <option value="20">20 mm / 6 soot</option> -->
+                </select>
+            </div>
+            <small class="form-text text-danger" *ngIf="form.controls.mortarRatio.touched && form.controls.mortarRatio.errors">Enter numerics only</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Distance Between Bars</label>
+            <div class="input-group-append">
+                <input type="number" class="form-control" formControlName="dbr" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Distance Between Bars">
+                <div class="input-group-append">
+                    <select name="" id="" formControlName="dbrUnit" class="form-control">
+                        <option value="i" [selected]="true">Inch</option>
+                        <option value="mm">mm</option>
+                    </select>
+                </div>
+            </div>
+            <small class="form-text text-danger" *ngIf="form.controls.dbr.touched && form.controls.dbr.errors">Enter numerics only</small>
+        </div>
+        
+
+        <!-- Cross mark  <span aria-hidden="true">&times;</span> -->
+        <button type="submit" class="btn btn-primary col-12" [disabled]="form.invalid">Calculate</button>
+    </form>
+</div>
+
+<div *ngIf="result"  class="alert-success">
+    {{result | json}}
+</div>
