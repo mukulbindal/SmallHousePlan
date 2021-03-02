@@ -1,6 +1,7 @@
 
 import { Component, DoCheck, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-column-work',
@@ -9,7 +10,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class ColumnWorkComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private router:Router) { }
   form: any;
   result: any = {};
 
@@ -60,27 +61,20 @@ export class ColumnWorkComponent implements OnInit {
     let AggregateVolume = z * NetVolume / (x + y + z);
     let AggregateCFT = AggregateVolume * 35.31;
     let noOfRings = H / dbr + 1;
+    this.result = [
+      ['Cement Required', this.round(cementWeightKg)+" Kg or "+Math.ceil(cementWeightKg/50)+" Bag(s)"],
+      ['Sand Required', this.round(SandVolume)+"m³ or "+this.round(SandCFT)+" ft³"],
+      ['Aggregate', this.round(AggregateVolume)+"m³ or "+this.round(AggregateCFT)+" ft³"],
+      ['Steel Bars', this.round(WeightOfSteel)+" Kg"],
+      ['Number of Rings', Math.ceil(noOfRings)]
+    ]
+    
+    this.router.navigate(['/results'], {state:{data:this.result}});
 
-    this.result = {
-      n,
-      dia,
-      H,
-      W,
-      T, noOfRings,
-      cementWeightKg,
-      WeightOfSteel,
-      WetVolume,
-      DryVolume,
-      SteelVolume,
-      NetVolume,
-      CementVolume,
-      SandVolume,
-      SandCFT,
-      AggregateVolume,
-      AggregateCFT
-    }
-    console.log(this.result);
+  }
 
+  round(num:number){
+    return Math.round(num * 100) / 100
   }
 
   number(c: FormControl) {

@@ -1,71 +1,10 @@
-<!-- <div>
-    <div class="row">
-        <div class="col">
-            <app-card [text]="'Brick Work'" 
-            [description]="'Find number of bricks in wall'" 
-            [icon]="'bricks.png'"
-            [routerLink]="['brick']"
-            >
-            </app-card>
-        </div>
-        <div class="col">
-            <app-card [text]="'Plaster Work'" 
-            [description]="'Find material in plaster'" 
-            [icon]="'plaster.png'"
-            [routerLink]="['plaster']"
-            >
-            </app-card>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <app-card [text]="'Column'" 
-            [description]="'Find material in a column'"
-            [icon]="'column.png'"
-            [routerLink]="['column']"
-            >
-            
-            </app-card>
-        </div>
-        <div class="col">
-            <app-card [text]="'Slab'" 
-            [description]="'Find material in slab'"
-            [icon]="'slab.png'"
-            [routerLink]="'slab'">
-        </app-card>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <app-card [text]="'Beam'" 
-            [description]="'Find material in beam'"
-            [icon]="'beam.png'">
-        </app-card>
-        </div>
-        <div class="col">
-            <app-card [text]="'Putty primer and paint'" 
-            [description]="'Find material in Putty primer and paint'"
-            [icon]="'paint.png'">
-        </app-card>
-        </div>
-    </div>  
-    <div class="row">
-        <div class="col">
-            <app-card [text]="'Unit Converter'" 
-            [description]="'Convert your units'"
-            [icon]="'unit.png'">
-        </app-card>
-        </div>
-    </div>
-    </div> -->
-
 
 <div class="flex-container">
     <div class=" ">
         <app-card [text]="'Brick Work'" 
         [description]="'Find number of bricks in wall'" 
         [icon]="'bricks.png'"
-        [routerLink]="['brick']"
+        [routerLink]="['/brick']"
         >
         </app-card>
     </div>
@@ -74,7 +13,7 @@
         <app-card [text]="'Plaster Work'" 
         [description]="'Find material in plaster'" 
         [icon]="'plaster.png'"
-        [routerLink]="['plaster']"
+        [routerLink]="['/plaster']"
         >
         </app-card>
     </div>
@@ -83,7 +22,7 @@
         <app-card [text]="'Column'" 
         [description]="'Find material in a column'"
         [icon]="'column.png'"
-        [routerLink]="['column']"
+        [routerLink]="['/column']"
         >
         
         </app-card>
@@ -92,13 +31,14 @@
         <app-card [text]="'Slab'" 
         [description]="'Find material in slab'"
         [icon]="'slab.png'"
-        [routerLink]="'slab'">
+        [routerLink]="['/slab']">
     </app-card>
     </div>
     <div class="">
         <app-card [text]="'Beam'" 
         [description]="'Find material in beam'"
-        [icon]="'beam.png'">
+        [icon]="'beam.png'"
+        [routerLink]="['/beam']">
     </app-card>
     </div>
     <div class="">

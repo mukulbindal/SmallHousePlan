@@ -1,0 +1,7 @@
+cordova build --release android
+
+keytool -genkey -v -keystore EstimatorApp.keystore -alias EstimatorMoblieApps -keyalg RSA -keysize 2048 -validity 10000
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore EstimatorApp.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk EstimatorMoblieApps
+
+~/Android/Sdk/build-tools/30.0.3/zipalign -v 4 platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk signed.apk

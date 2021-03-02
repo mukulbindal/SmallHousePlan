@@ -11,6 +11,10 @@ import { BrickWorkComponent } from './brick-work/brick-work.component';
 import { PlasterWorkComponent } from './plaster-work/plaster-work.component';
 import { ColumnWorkComponent } from './column-work/column-work.component';
 import { SlabWorkComponent } from './slab-work/slab-work.component';
+import { DisplayCalculationsComponent } from './display-calculations/display-calculations.component';
+import { SplashComponent } from './splash/splash.component';
+import { BeamComponent } from './beam/beam.component';
+import { PuttyPrimerWorkComponent } from './putty-primer-work/putty-primer-work.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { SlabWorkComponent } from './slab-work/slab-work.component';
     BrickWorkComponent,
     PlasterWorkComponent,
     ColumnWorkComponent,
-    SlabWorkComponent
+    SlabWorkComponent,
+    DisplayCalculationsComponent,
+    SplashComponent,
+    BeamComponent,
+    PuttyPrimerWorkComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-brick-work',
@@ -8,7 +9,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class BrickWorkComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private router:Router) { }
   form:any;
   result:any = {};
 
@@ -63,18 +64,17 @@ export class BrickWorkComponent implements OnInit {
     let sandWeight1 = sandVol*1450;
     let sandWeight2 = sandVol*1500;
     let sandCFT = sandVol*35.31;
-    this.result = {
-      noOfBricks,
-      cementWeightKg,
-      cementCFT,
-      sandWeight1,
-      sandWeight2,
-      sandCFT,
-      cementVol,
-      sandVol,
-      dryMortar
-    }
-    console.log(this.result);
+    this.result = [
+      ['Number of Bricks', Math.round(noOfBricks)],
+      ['Cement Required', this.round(cementWeightKg)+" Kg or "+Math.ceil(cementWeightKg/50)+" Bag(s)"],
+      ['Sand Required', this.round(sandWeight1)+" to "+this.round(sandWeight2)+" Kg or "+this.round(sandVol)+"m³ or "+this.round(sandCFT)+" ft³"],
+    ]
+    this.router.navigate(['/results'], {state:{data:this.result}});
+    
+  }
+
+  round(num:number){
+    return Math.round(num * 100) / 100
   }
 
   number(c:FormControl){
@@ -97,3 +97,5 @@ export class BrickWorkComponent implements OnInit {
   }
 
 }
+
+
