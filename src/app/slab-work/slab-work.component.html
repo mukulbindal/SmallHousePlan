@@ -7,8 +7,8 @@
                 placeholder="Slab Width">
                 <div class="input-group-append">
                     <select name="" id="" formControlName="heightUnit" class="form-control">
-                        <option value="m" [selected]="true">Meter</option>
-                        <option value="f">Feet</option>
+                        <option value="m" >Meter</option>
+                        <option value="f" [selected]="true">Feet</option>
                     </select>
                 </div>
             </div>
@@ -47,6 +47,7 @@
                 <select class="form-control col-12" name="" id="" formControlName="mortarRatio">
                     <option value="[1.5,3]" [selected]="true">1:1.5:3</option>
                     <option value="[2,2]">1:2:2</option>
+                    <option value="[2.5,3]">1:2.5:3</option>
                     <option value="[2,4]">1:2:4</option>
                 </select>
             </div>

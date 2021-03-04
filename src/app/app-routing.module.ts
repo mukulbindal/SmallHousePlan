@@ -7,8 +7,10 @@ import { DisplayCalculationsComponent } from './display-calculations/display-cal
 import { FormFirstComponent } from './form-first/form-first.component';
 import { HomeComponent } from './home/home.component';
 import { PlasterWorkComponent } from './plaster-work/plaster-work.component';
+import { PuttyPrimerWorkComponent } from './putty-primer-work/putty-primer-work.component';
 import { SlabWorkComponent } from './slab-work/slab-work.component';
 import { SplashComponent } from './splash/splash.component';
+import { UnitConvertorComponent } from './unit-convertor/unit-convertor.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -18,6 +20,8 @@ const routes: Routes = [
   {path:'column', component:ColumnWorkComponent},
   {path:'slab', component:SlabWorkComponent},
   {path:'beam', component:BeamComponent},
+  {path:'puttyprimer', component:PuttyPrimerWorkComponent},
+  {path:'unit', component:UnitConvertorComponent},
   {path:'results', component:DisplayCalculationsComponent}
 ];
 

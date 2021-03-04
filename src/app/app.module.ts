@@ -15,7 +15,24 @@ import { DisplayCalculationsComponent } from './display-calculations/display-cal
 import { SplashComponent } from './splash/splash.component';
 import { BeamComponent } from './beam/beam.component';
 import { PuttyPrimerWorkComponent } from './putty-primer-work/putty-primer-work.component';
+import {ShareModule} from 'ngx-sharebuttons';
+import { ShareComponent } from './share/share.component';
+import { UnitConvertorComponent } from './unit-convertor/unit-convertor.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import {MatTabsModule} from '@angular/material/tabs'
 
+
+const customConfig = {
+  prop: {
+    whatsapp: {
+      share: {
+        ios: 'whatsapp://send?text=',
+        android: 'whatsapp://send?text=',
+      }
+    },
+
+  }
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,12 +47,17 @@ import { PuttyPrimerWorkComponent } from './putty-primer-work/putty-primer-work.
     DisplayCalculationsComponent,
     SplashComponent,
     BeamComponent,
-    PuttyPrimerWorkComponent
+    PuttyPrimerWorkComponent,
+    ShareComponent,
+    UnitConvertorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    ShareModule.withConfig(customConfig),
+    BrowserAnimationsModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

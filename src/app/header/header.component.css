@@ -7,5 +7,5 @@ div{
     top: 0;
     width: 100%;
     margin-bottom: 5px;
-
+    box-shadow: 2px 2px 2px 2px #c9c9c9;
 }

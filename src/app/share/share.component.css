@@ -1,0 +1,37 @@
+.share{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5%;
+    font-size: 25px;
+}
+.share *{
+    margin:10px;
+}
+
+.facebook{
+    color: #4267B2;
+}
+
+.whatsapp{
+    color: #25D366;
+}
+
+.twitter{
+    color: #1DA1F2;
+}
+.linkedin{
+    color: #0e76a8;
+}
+.telegram{
+    color: #0088cc;
+}
+
+.email{
+    color:#BB001B;
+}
+
+.msg{
+    color: coral;
+}

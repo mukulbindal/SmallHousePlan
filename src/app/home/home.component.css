@@ -4,3 +4,33 @@
     justify-content: center;
     padding: 5px;
 }
+
+.share-body{
+    position: fixed;
+    bottom: -100vh;
+    padding-bottom: 10px;
+    background-color: white;
+    border-radius: 15px 15px 0px 0px;
+    box-shadow: 3px 3px 3px 3px rgb(199, 199, 199);
+    transition: all 1s ease-out;
+}
+
+.share-button:hover ~ .share-body{
+    bottom:0px;
+}
+
+.flex-container::after ~ .share-body{
+    bottom: -100vh;
+}
+
+.share-button-body{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn{
+    background-color:#1e9eee;
+    color: white;
+    border-radius: 100%;
+    box-shadow: 2px 1px 1px rgb(204, 204, 204);
+}   

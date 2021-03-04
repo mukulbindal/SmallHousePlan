@@ -1,0 +1,64 @@
+<div class="div-body" (touchstart)="display($event, 'start')" (touchend)="display($event, 'end')">
+  <mat-tab-group mat-align-tabs="center" [(selectedIndex)]="selected">
+    <mat-tab label="Length"> 
+          <div class="container row">
+            <input class="form-control col-7 offset-1" placeholder="Enter Value" type="number" #lengthValue (keyup)="convertToMeterLength(lengthValue.value, lengthUnit.value)">
+            <select class="form-control col" name="" id="" #lengthUnit (change)="convertToMeterLength(lengthValue.value, lengthUnit.value)">
+              <option *ngFor="let unit of lengthUnits|keyvalue" value="{{unit.key}}">{{unit.key}}</option>
+            </select>
+            <table class="table table-striped">
+              <tr class="row" *ngFor="let i of convertedLengths">
+                <td class="col-7">{{i[0]}}</td>
+                <td class="col">{{i[1]}}</td>
+              </tr>
+            </table>
+          </div>
+    </mat-tab>
+    <mat-tab label="Land Measurement">
+      <div class="container row">
+        <input class="form-control col-7 offset-1" placeholder="Enter Value" type="number" #landValue (keyup)="convertToMeterLand(landValue.value, landUnit.value)">
+        <select class="form-control col" name="" id="" #landUnit (change)="convertToMeterLand(landValue.value, landUnit.value)">
+          <option *ngFor="let unit of landUnits|keyvalue" value="{{unit.key}}">{{unit.key}}</option>
+        </select>
+        <table class="table table-striped">
+          <tr class="row" *ngFor="let i of convertedLands">
+            <td class="col-7">{{i[0]}}</td>
+            <td></td>
+            <td class="col">{{i[1]}}</td>
+          </tr>
+        </table>
+      </div>
+
+
+    </mat-tab>
+    <mat-tab label="Area">
+      <div class="container row">
+      <input class="form-control col-7 offset-1" placeholder="Enter Value" type="number" #areaValue (keyup)="convertToMeterArea( areaValue.value,  areaUnit.value)">
+      <select class="form-control col" name="" id="" #areaUnit (change)="convertToMeterArea( areaValue.value,  areaUnit.value)">
+        <option *ngFor="let unit of  areaUnits|keyvalue" value="{{unit.key}}">{{unit.key}}</option>
+      </select>
+      <table class="table table-striped">
+        <tr class="row" *ngFor="let i of convertedAreas">
+          <td class="col-7">{{i[0]}}</td>
+          <td class="col">{{i[1]}}</td>
+        </tr>
+      </table>
+    </div>
+  </mat-tab>
+    <mat-tab label="Volume">
+      <div class="container row">
+        <input class="form-control col-7 offset-1" placeholder="Enter Value" type="number" #volumeValue (keyup)="convertToMeterVolume( volumeValue.value,  volumeUnit.value)">
+        <select class="form-control col" name="" id="" #volumeUnit (change)="convertToMeterVolume( volumeValue.value,  volumeUnit.value)">
+          <option *ngFor="let unit of  volumeUnits|keyvalue" value="{{unit.key}}">{{unit.key}}</option>
+        </select>
+        <table class="table table-striped">
+          <tr class="row" *ngFor="let i of convertedVolumes">
+            <td class="col-7">{{i[0]}}</td>
+            <td class="col">{{i[1]}}</td>
+          </tr>
+        </table>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+

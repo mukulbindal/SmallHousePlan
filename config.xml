@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.estimator.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Estimator</name>
+    <name>Small House Plan</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
@@ -15,6 +15,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <allow-intent href="facebook:*" />
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
