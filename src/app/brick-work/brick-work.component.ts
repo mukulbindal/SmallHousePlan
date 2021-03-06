@@ -12,22 +12,21 @@ export class BrickWorkComponent implements OnInit {
   constructor(private fb: FormBuilder, private router:Router) { }
   form:any;
   result:any = {};
-
   ngOnInit(): void {
     this.form = this.fb.group({
       wallHeight:['',[Validators.required, this.number]],
-      heightUnit:['m',[Validators.required]],
+      heightUnit:['f',[Validators.required]],
       wallLength:['',[Validators.required, this.number]],
-      lengthUnit:['m',[Validators.required]],
+      lengthUnit:['f',[Validators.required]],
       wallThickness:['10', Validators.required],
       mortarRatio:['3', Validators.required],
       isDoor:['0', Validators.required],
       doorWidth:['0', [Validators.required]],
       doorHeight:['0', [Validators.required]],
-      doorUnit:['m', Validators.required],
+      doorUnit:['f', Validators.required],
       windowWidth:['0', [Validators.required]],
       windowHeight:['0', [Validators.required]],
-      windowUnit:['m', Validators.required],
+      windowUnit:['f', Validators.required],
       isWindow:['0', Validators.required]
     },)
   }
@@ -69,12 +68,20 @@ export class BrickWorkComponent implements OnInit {
       ['Cement Required', this.round(cementWeightKg)+" Kg or "+Math.ceil(cementWeightKg/50)+" Bag(s)"],
       ['Sand Required', this.round(sandWeight1)+" to "+this.round(sandWeight2)+" Kg or "+this.round(sandVol)+"m³ or "+this.round(sandCFT)+" ft³"],
     ]
-    this.router.navigate(['/results'], {state:{data:this.result}});
+
+    const quantities = {
+      Brick:Math.round(noOfBricks),
+      Cement:Math.ceil(cementWeightKg/50),
+      Sand:this.round(sandCFT),
+      aggregate:0,
+      steel:0
+    }
+    this.router.navigate(['/results'], {state:{data:this.result,quantities}});
     
   }
 
   round(num:number){
-    return Math.round(num * 100) / 100
+    return num.toFixed(5);
   }
 
   number(c:FormControl){

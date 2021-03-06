@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-display-calculations',
@@ -7,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayCalculationsComponent implements OnInit {
   data:any;
-  constructor() { }
+  q:any;
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
     this.data = history.state.data;
+    this.q = history.state.quantities;
+
+  }
+  onClick(){
+    this.router.navigate(['/rates'], {state:{quantities:this.q}});
   }
 
 }

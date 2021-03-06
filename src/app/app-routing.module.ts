@@ -8,6 +8,7 @@ import { FormFirstComponent } from './form-first/form-first.component';
 import { HomeComponent } from './home/home.component';
 import { PlasterWorkComponent } from './plaster-work/plaster-work.component';
 import { PuttyPrimerWorkComponent } from './putty-primer-work/putty-primer-work.component';
+import { RatesComponent } from './rates/rates.component';
 import { SlabWorkComponent } from './slab-work/slab-work.component';
 import { SplashComponent } from './splash/splash.component';
 import { UnitConvertorComponent } from './unit-convertor/unit-convertor.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:'beam', component:BeamComponent},
   {path:'puttyprimer', component:PuttyPrimerWorkComponent},
   {path:'unit', component:UnitConvertorComponent},
+  {path:'rates', component:RatesComponent},
   {path:'results', component:DisplayCalculationsComponent}
 ];
 

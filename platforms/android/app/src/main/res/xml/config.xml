@@ -21,5 +21,11 @@
     <allow-intent href="geo:*" />
     <allow-intent href="facebook:*" />
     <allow-intent href="market:*" />
+    <icon density="hdpi" platform="android" src="res/drawable-hdpi/logo.png" />
+    <icon density="ldpi" platform="android" src="res/drawable-ldpi/logo.png" />
+    <icon density="mdpi" platform="android" src="res/drawable-mdpi/logo.png" />
+    <icon density="xhdpi" platform="android" src="res/drawable-xhdpi/logo.png" />
+    <icon density="xxhdpi" platform="android" src="res/drawable-xxhdpi/logo.png" />
+    <icon density="xxxhdpi" platform="android" src="res/drawable-xxxhdpi/logo.png" />
     <preference name="loglevel" value="DEBUG" />
 </widget>

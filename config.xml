@@ -18,6 +18,13 @@
     <allow-intent href="facebook:*" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <icon src="res/drawable-hdpi/logo.png" platform="android" density="hdpi" />
+        <icon src="res/drawable-ldpi/logo.png" platform="android" density="ldpi" />
+        <icon src="res/drawable-mdpi/logo.png" platform="android" density="mdpi" />
+        <icon src="res/drawable-xhdpi/logo.png" platform="android" density="xhdpi" />
+        <icon src="res/drawable-xxhdpi/logo.png" platform="android" density="xxhdpi" />
+        <icon src="res/drawable-xxxhdpi/logo.png" platform="android" density="xxxhdpi" />
+        
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />

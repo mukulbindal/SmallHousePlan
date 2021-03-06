@@ -3,22 +3,22 @@
         <div class="form-group">
             <label for="exampleInputEmail1">Enter Beam Length</label>
             <div class="input-group-append">
-                <input type="number" class="form-control" formControlName="wallHeight" id="exampleInputEmail1" aria-describedby="emailHelp"
+                <input type="number" onkeyup="event.target.value=event.target.value.replace('-','')"   class="form-control" formControlName="wallHeight" id="exampleInputEmail1" aria-describedby="emailHelp"
                 placeholder="Beam Length">
                 <div class="input-group-append">
                     <select name="" id="" formControlName="heightUnit" class="form-control">
-                        <option value="m" [selected]="true">Meter</option>
-                        <option value="f">Feet</option>
+                        <option value="f" [selected]="true">Feet</option>
+                        <option value="m">Meter</option>
                     </select>
                 </div>
             </div>
-            <small class="form-text text-danger" *ngIf="form.controls.wallHeight.touched && form.controls.wallHeight.errors">Enter numerics only</small>
+            <small class="form-text text-danger" *ngIf="form.controls.wallHeight.touched && form.controls.wallHeight.errors">Enter positive numerics only</small>
         </div>
 
         <div class="form-group">
             <label for="exampleInputEmail1">Enter Beam Width</label>
             <div class="input-group-append">
-                <input type="number" class="form-control" formControlName="wallLength" id="exampleInputEmail1" aria-describedby="emailHelp"
+                <input type="number" onkeyup="event.target.value=event.target.value.replace('-','')"   class="form-control" formControlName="wallLength" id="exampleInputEmail1" aria-describedby="emailHelp"
                 placeholder="Beam Width">
                 <div class="input-group-append">
                     <select name="" id="" formControlName="lengthUnit" class="form-control">
@@ -27,13 +27,13 @@
                     </select>
                 </div>
             </div>
-            <small class="form-text text-danger" *ngIf="form.controls.wallLength.touched && form.controls.wallLength.errors">Enter numerics only</small>
+            <small class="form-text text-danger" *ngIf="form.controls.wallLength.touched && form.controls.wallLength.errors">Enter positive numerics only</small>
         </div>
 
         <div class="form-group">
             <label for="exampleInputEmail1">Enter Beam Thickness</label>
             <div class="input-group-append">
-                <input type="number" class="form-control" formControlName="wallThickness" id="exampleInputEmail1" aria-describedby="emailHelp"
+                <input type="number" onkeyup="event.target.value=event.target.value.replace('-','')"   class="form-control" formControlName="wallThickness" id="exampleInputEmail1" aria-describedby="emailHelp"
                 placeholder="Beam Thickness">
                 <div class="input-group-append">
                     <select name="" id="" formControlName="thicknessUnit" class="form-control">
@@ -42,7 +42,7 @@
                     </select>
                 </div>
             </div>
-            <small class="form-text text-danger" *ngIf="form.controls.wallLength.touched && form.controls.wallLength.errors">Enter numerics only</small>
+            <small class="form-text text-danger" *ngIf="form.controls.wallLength.touched && form.controls.wallLength.errors">Enter positive numerics only</small>
         </div>
 
         <div class="form-group">
@@ -55,16 +55,16 @@
                     <option value="[3,6]">1:3:6</option>
                 </select>
             </div>
-            <small class="form-text text-danger" *ngIf="form.controls.mortarRatio.touched && form.controls.mortarRatio.errors">Enter numerics only</small>
+            <small class="form-text text-danger" *ngIf="form.controls.mortarRatio.touched && form.controls.mortarRatio.errors">Enter positive numerics only</small>
         </div>
 
         <div class="form-group">
             <label for="exampleInputEmail1">Enter Number of Bars</label>
             <div class="input-group-append">
-                <input type="number" class="form-control" formControlName="numberOfBar" id="exampleInputEmail1" aria-describedby="emailHelp"
+                <input type="number" onkeyup="event.target.value=event.target.value.replace('-','')"   class="form-control" formControlName="numberOfBar" id="exampleInputEmail1" aria-describedby="emailHelp"
                 placeholder="Number of Bars">
             </div>
-            <small class="form-text text-danger" *ngIf="form.controls.numberOfBar.touched && form.controls.numberOfBar.errors">Enter numerics only</small>
+            <small class="form-text text-danger" *ngIf="form.controls.numberOfBar.touched && form.controls.numberOfBar.errors">Enter positive numerics only</small>
         </div>
 
         <div class="form-group">
@@ -77,12 +77,12 @@
                     <option value="20">20 mm / 6 soot</option>
                 </select>
             </div>
-            <small class="form-text text-danger" *ngIf="form.controls.mortarRatio.touched && form.controls.mortarRatio.errors">Enter numerics only</small>
+            <small class="form-text text-danger" *ngIf="form.controls.mortarRatio.touched && form.controls.mortarRatio.errors">Enter positive numerics only</small>
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Distance Between Rings</label>
             <div class="input-group-append">
-                <input type="number" class="form-control" formControlName="dbr" id="exampleInputEmail1" aria-describedby="emailHelp"
+                <input type="number" onkeyup="event.target.value=event.target.value.replace('-','')"   class="form-control" formControlName="dbr" id="exampleInputEmail1" aria-describedby="emailHelp"
                 placeholder="Distance Between Rings">
                 <div class="input-group-append">
                     <select name="" id="" formControlName="dbrUnit" class="form-control">
@@ -91,7 +91,7 @@
                     </select>
                 </div>
             </div>
-            <small class="form-text text-danger" *ngIf="form.controls.dbr.touched && form.controls.dbr.errors">Enter numerics only</small>
+            <small class="form-text text-danger" *ngIf="form.controls.dbr.touched && form.controls.dbr.errors">Enter positive numerics only</small>
         </div>
         
 

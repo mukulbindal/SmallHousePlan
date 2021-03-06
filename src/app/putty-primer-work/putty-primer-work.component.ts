@@ -15,16 +15,16 @@ export class PuttyPrimerWorkComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       wallHeight:['',[Validators.required, this.number]],
-      heightUnit:['m',[Validators.required]],
+      heightUnit:['f',[Validators.required]],
       wallLength:['',[Validators.required, this.number]],
-      lengthUnit:['m',[Validators.required]],
+      lengthUnit:['f',[Validators.required]],
       isDoor:['0', Validators.required],
       doorWidth:['0', [Validators.required]],
       doorHeight:['0', [Validators.required]],
-      doorUnit:['m', Validators.required],
+      doorUnit:['f', Validators.required],
       windowWidth:['0', [Validators.required]],
       windowHeight:['0', [Validators.required]],
-      windowUnit:['m', Validators.required],
+      windowUnit:['f', Validators.required],
       isWindow:['0', Validators.required]
     },)
   }
@@ -59,12 +59,20 @@ export class PuttyPrimerWorkComponent implements OnInit {
       ['Primer Required', primer1coat+" ltr for 1 coat and "+primer2coat+" ltr for 2 coats"],
       ['Paint Required',paint1coat+" ltr for 1 coat and "+paint2coat+" ltr for 2 coats"]
     ]
-    this.router.navigate(['/results'], {state:{data:this.result}});
+    const quantities = {
+      putty2coat,
+      putty3coat,
+      primer1coat,
+      primer2coat,
+      paint1coat,
+      paint2coat
+    }
+    this.router.navigate(['/results'], {state:{data:this.result,quantities}});
     
   }
 
   round(num:number){
-    return Math.round(num * 100) / 100
+    return num.toFixed(5);
   }
 
   number(c:FormControl){

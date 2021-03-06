@@ -1,0 +1,23 @@
+.label{
+    font-size: 11px;
+}
+
+.table{
+    width: auto;
+}
+tbody td{
+    word-break: break-word;
+    padding: 3px;
+}
+p{
+    margin-bottom: 1px;
+}
+
+.adjust{
+    padding: 2%;
+}
+
+*{
+    font-size: 14px;
+}
+

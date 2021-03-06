@@ -1,8 +1,10 @@
+<!-- <app-rates></app-rates> -->
+
 <div *ngIf="showHeader">
     <app-splash></app-splash>
 </div>
 
-<div *ngIf="!showHeader">
+<div *ngIf="!showHeader" class="body">
     <app-header></app-header>
     <router-outlet></router-outlet>
 </div>

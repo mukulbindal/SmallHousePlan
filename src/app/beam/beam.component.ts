@@ -16,7 +16,7 @@ export class BeamComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       wallHeight: ['', [Validators.required, this.number]],
-      heightUnit: ['m', [Validators.required]],
+      heightUnit: ['f', [Validators.required]],
       wallLength: ['', [Validators.required, this.number]],
       lengthUnit: ['i', [Validators.required]],
       wallThickness: ['', [Validators.required, this.number]],
@@ -68,12 +68,19 @@ export class BeamComponent implements OnInit {
       ['Number of Rings', Math.ceil(noOfRings)]
     ]
     
-    this.router.navigate(['/results'], {state:{data:this.result}});
+    const quantities = {
+      Brick:0,
+      Cement:Math.ceil(cementWeightKg/50),
+      Sand:this.round(SandCFT),
+      aggregate:this.round(AggregateCFT),
+      steel:this.round(WeightOfSteel)
+    }
+    this.router.navigate(['/results'], {state:{data:this.result,quantities}});
 
   }
 
   round(num:number){
-    return Math.round(num * 100) / 100
+    return num.toFixed(5);  
   }
 
   number(c: FormControl) {

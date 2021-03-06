@@ -43,7 +43,7 @@ export class UnitConvertorComponent implements OnInit {
       value = parseFloat(value);
       this.length = value/this.lengthUnits[unit];
     }
-    this.convertUnitsLength()
+    this.convertUnitsLength();
     return 0
     
   } 
@@ -52,7 +52,7 @@ export class UnitConvertorComponent implements OnInit {
     this.convertedLengths = [];
     for(let i of Object.keys(this.lengthUnits)){
       this.convertedLengths.push([
-        this.length*this.lengthUnits[i], i
+        (this.length*this.lengthUnits[i]).toFixed(5), i
       ])
        //console.log(this.lengthUnits[i])
     }
@@ -93,7 +93,7 @@ export class UnitConvertorComponent implements OnInit {
     this.convertedAreas = [];
     for(let i of Object.keys(this.areaUnits)){
       this.convertedAreas.push([
-        this.area*this.areaUnits[i], i
+        (this.area*this.areaUnits[i]).toFixed(5), i
       ])
        //console.log(this.lengthUnits[i])
     }
@@ -136,7 +136,7 @@ export class UnitConvertorComponent implements OnInit {
     this.convertedVolumes = [];
     for(let i of Object.keys(this.volumeUnits)){
       this.convertedVolumes.push([
-        this.volume*this.volumeUnits[i], i
+        (this.volume*this.volumeUnits[i]).toFixed(5), i
       ])
        //console.log(this.lengthUnits[i])
     }
@@ -176,7 +176,7 @@ export class UnitConvertorComponent implements OnInit {
     this.convertedLands = [];
     for(let i of Object.keys(this.landUnits)){
       this.convertedLands.push([
-        this.land*this.landUnits[i], i
+        (this.land*this.landUnits[i]).toFixed(5), i
       ])
        //console.log(this.lengthUnits[i])
     }

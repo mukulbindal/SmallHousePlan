@@ -22,7 +22,7 @@ export class SlabWorkComponent implements OnInit {
       wallThickness: ['10', [Validators.required, this.number]],
       mortarRatio: ['[1.5,3]', Validators.required],
       diameterOfBar: ['10', Validators.required],
-      dbr: ['10', [Validators.required]],
+      dbr: ['', [Validators.required]],
       dbrUnit: ['i', [Validators.required]]
     })
   }
@@ -46,9 +46,9 @@ export class SlabWorkComponent implements OnInit {
     let dia = parseInt(data.diameterOfBar);
     let dbr = this.toMeter(parseFloat(data.dbr), data.dbrUnit);
 
-    let NumberOfBarH = (1+H/dbr)
-    let NumberOfBarW=(1+W/dbr)
-    let LengthOfBar = H*NumberOfBarH+W*NumberOfBarW;
+    let NumberOfBarH = (1 + H / dbr)
+    let NumberOfBarW = (1 + W / dbr)
+    let LengthOfBar = H * NumberOfBarH + W * NumberOfBarW;
 
     let WeightOfSteel = dia * dia * LengthOfBar / 162;
     let WetVolume = H * W * T;
@@ -73,11 +73,18 @@ export class SlabWorkComponent implements OnInit {
     //      H, W, dbr, T, LengthOfBar, WeightOfSteel
     //   }
     // )
-    this.router.navigate(['/results'], { state: { data: this.result } });
+    const quantities = {
+      Brick:0,
+      Cement:Math.ceil(cementWeightKg/50),
+      Sand:this.round(SandCFT),
+      aggregate:this.round(AggregateCFT),
+      steel:this.round(WeightOfSteel)
+    }
+    this.router.navigate(['/results'], {state:{data:this.result,quantities}});
 
   }
   round(num: number) {
-    return Math.round(num * 100) / 100
+    return num.toFixed(5);
   }
   number(c: FormControl) {
     if (parseFloat(c.value) >= 0) return null;

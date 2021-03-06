@@ -19,7 +19,8 @@ import {ShareModule} from 'ngx-sharebuttons';
 import { ShareComponent } from './share/share.component';
 import { UnitConvertorComponent } from './unit-convertor/unit-convertor.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import {MatTabsModule} from '@angular/material/tabs'
+import {MatTabsModule} from '@angular/material/tabs';
+import { RatesComponent } from './rates/rates.component'
 
 
 const customConfig = {
@@ -49,7 +50,8 @@ const customConfig = {
     BeamComponent,
     PuttyPrimerWorkComponent,
     ShareComponent,
-    UnitConvertorComponent
+    UnitConvertorComponent,
+    RatesComponent
   ],
   imports: [
     BrowserModule,

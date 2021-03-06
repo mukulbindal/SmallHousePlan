@@ -3,31 +3,32 @@
         <div class="form-group">
             <label for="exampleInputEmail1">Enter Wall Height</label>
             <div class="input-group-append">
-                <input type="number" class="form-control" formControlName="wallHeight" id="exampleInputEmail1" aria-describedby="emailHelp"
+                <input type="number" onkeyup="event.target.value=event.target.value.replace('-','')"  class="form-control" formControlName="wallHeight" id="exampleInputEmail1" aria-describedby="emailHelp"
                 placeholder="Wall Height">
                 <div class="input-group-append">
                     <select name="" id="" formControlName="heightUnit" class="form-control">
-                        <option value="m" [selected]="true">Meter</option>
-                        <option value="f">Feet</option>
+                        <option value="f" [selected]="true">Feet</option>
+                        <option value="m">Meter</option>
+                       
                     </select>
                 </div>
             </div>
-            <small class="form-text text-danger" *ngIf="form.controls.wallHeight.touched && form.controls.wallHeight.errors">Enter numerics only</small>
+            <small class="form-text text-danger" *ngIf="form.controls.wallHeight.touched && form.controls.wallHeight.errors">Enter positive numerics only</small>
         </div>
 
         <div class="form-group">
             <label for="exampleInputEmail1">Enter Wall Length</label>
             <div class="input-group-append">
-                <input type="number" class="form-control" formControlName="wallLength" id="exampleInputEmail1" aria-describedby="emailHelp"
+                <input type="number" onkeyup="event.target.value=event.target.value.replace('-','')"   class="form-control" formControlName="wallLength" id="exampleInputEmail1" aria-describedby="emailHelp"
                 placeholder="Wall Length">
                 <div class="input-group-append">
                     <select name="" id="" formControlName="lengthUnit" class="form-control">
-                        <option value="m" [selected]="true">Meter</option>
-                        <option value="f">Feet</option>
+                        <option value="f" [selected]="true">Feet</option>
+                        <option value="m">Meter</option>
                     </select>
                 </div>
             </div>
-            <small class="form-text text-danger" *ngIf="form.controls.wallLength.touched && form.controls.wallLength.errors">Enter numerics only</small>
+            <small class="form-text text-danger" *ngIf="form.controls.wallLength.touched && form.controls.wallLength.errors">Enter positive numerics only</small>
         </div>
 
         <div class="form-group">
@@ -38,7 +39,7 @@
                     <option value="20">20 CM</option>
                 </select>
             </div>
-            <small class="form-text text-danger" *ngIf="form.controls.wallThickness.touched && form.controls.wallThickness.errors">Enter numerics only</small>
+            <small class="form-text text-danger" *ngIf="form.controls.wallThickness.touched && form.controls.wallThickness.errors">Enter positive numerics only</small>
         </div>
 
         <div class="form-group">
@@ -51,7 +52,7 @@
                     <option value="6">1:6</option>
                 </select>
             </div>
-            <small class="form-text text-danger" *ngIf="form.controls.mortarRatio.touched && form.controls.mortarRatio.errors">Enter numerics only</small>
+            <small class="form-text text-danger" *ngIf="form.controls.mortarRatio.touched && form.controls.mortarRatio.errors">Enter positive numerics only</small>
         </div>
 
         <div class="form-group">
@@ -59,17 +60,17 @@
             Yes <input name="" id="isDoor" formControlName="isDoor" value="1" type="radio">
             No <input name="" id="isDoor" formControlName="isDoor" value="0" type="radio" (click)='resetDoor()'>
             <div class="input-group-append" *ngIf="form.controls.isDoor.value === '1'">
-                <input #dw type="number" class="form-control" formControlName="doorWidth" id="exampleInputEmail1" aria-describedby="emailHelp"
+                <input type="number" onkeyup="event.target.value=event.target.value.replace('-','')"   #dw class="form-control" formControlName="doorWidth" id="exampleInputEmail1" aria-describedby="emailHelp"
                 placeholder="Door Width" >
                 <span><i class="bi bi-x-circle"></i></span>
-                <input #dh type="number" class="form-control" formControlName="doorHeight" id="exampleInputEmail1" aria-describedby="emailHelp"
+                <input type="number" onkeyup="event.target.value=event.target.value.replace('-','')"   #dh class="form-control" formControlName="doorHeight" id="exampleInputEmail1" aria-describedby="emailHelp"
                 placeholder="Door Height" >
                 <select name="" id="" formControlName="doorUnit" class="form-control">
-                    <option value="m" [selected]="true">Meter</option>
-                    <option value="f">Feet</option>
+                    <option value="f" [selected]="true">Feet</option>
+                        <option value="m">Meter</option>
                 </select>
             </div>
-            <small class="form-text text-danger" *ngIf="">Enter numerics only</small>
+            <small class="form-text text-danger" *ngIf="">Enter positive numerics only</small>
         </div>
 
 
@@ -78,17 +79,17 @@
             Yes <input name="" id="isWindow" formControlName="isWindow" value="1" type="radio">
             No <input name="" id="isWindow" formControlName="isWindow" value="0" type="radio" (click)='resetWindow()'>
             <div class="input-group-append" *ngIf="form.controls.isWindow.value === '1'">
-                <input #dw type="number" class="form-control" formControlName="windowWidth" id="exampleInputEmail1" aria-describedby="emailHelp"
+                <input type="number" onkeyup="event.target.value=event.target.value.replace('-','')"   #dw class="form-control" formControlName="windowWidth" id="exampleInputEmail1" aria-describedby="emailHelp"
                 placeholder="Window Width" >
                 <span><i class="bi bi-x-circle"></i></span>
-                <input #dh type="number" class="form-control" formControlName="windowHeight" id="exampleInputEmail1" aria-describedby="emailHelp"
+                <input type="number" onkeyup="event.target.value=event.target.value.replace('-','')"   #dh class="form-control" formControlName="windowHeight" id="exampleInputEmail1" aria-describedby="emailHelp"
                 placeholder="Window Height" >
                 <select name="" id="" formControlName="windowUnit" class="form-control">
-                    <option value="m" [selected]="true">Meter</option>
-                    <option value="f">Feet</option>
+                    <option value="f" [selected]="true">Feet</option>
+                    <option value="m">Meter</option>
                 </select>
             </div>
-            <small class="form-text text-danger" *ngIf="">Enter numerics only</small>
+            <small class="form-text text-danger" *ngIf="">Enter positive numerics only</small>
         </div>
 
         <!-- Cross mark  <span aria-hidden="true">&times;</span> -->

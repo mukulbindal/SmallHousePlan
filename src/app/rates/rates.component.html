@@ -1,0 +1,48 @@
+<div class="adjust">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Quantity</td>
+                <td>Rate & Unit</td>
+                <td>Total</td>
+            </tr>
+        </thead>
+        <div id="a"></div>
+        <tbody>
+            <tr *ngFor="let item of (isPutty?data2:data)|keyvalue">
+                <td class="">
+                    <p class="label">{{item.value.label}}</p>
+                    <p class="">{{item.value.quantity}}</p>
+                </td>
+                <td class="inputs">
+                    <p><input type="number" onkeyup="event.target.value=event.target.value.replace('-','')"  
+                        class="form-control" 
+                        [value]="item.value.rate"
+                        (keyup)="setData($event, item.key, 'rate')"
+                        ></p>
+                    <p>
+                        <select class="form-control"
+                        (change)="setData($event, item.key, 'unit')"
+                        >
+                            <option *ngFor="let u of item.value.unit" [value]="u">per {{u}}</option>
+                        </select>
+                    </p>
+                </td>
+
+                <td class="">
+                    <p>
+                        ₹ {{item.value.result}}
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="text-align: right;">Grand Total:</td>
+                <td>₹ {{gtotal}}</td>
+
+            </tr>
+            <tr><td></td><td></td><td></td></tr>
+        </tbody>
+    </table>
+</div>
+
