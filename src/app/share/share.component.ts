@@ -11,7 +11,7 @@ export class ShareComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  url = "https://www.google.com";
+  url = "https://play.google.com/store/apps/details?id=com.smallhouseplan.calculator";
   description = "Hey there! Follow this link to download my App!!\n";
   textToShare = encodeURI(this.description + this.url);
 }

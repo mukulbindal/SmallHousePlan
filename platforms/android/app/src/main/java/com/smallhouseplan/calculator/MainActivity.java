@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.estimator.app;
+package com.smallhouseplan.calculator;
 
 import android.os.Bundle;
 import org.apache.cordova.*;

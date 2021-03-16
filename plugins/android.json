@@ -8,7 +8,7 @@
   },
   "installed_plugins": {
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.estimator.app"
+      "PACKAGE_NAME": "com.smallhouseplan.calculator"
     }
   },
   "dependent_plugins": {}
