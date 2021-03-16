@@ -1,7 +1,8 @@
 cordova build --release android
 
-keytool -genkey -v -keystore EstimatorApp.keystore -alias EstimatorMoblieApps -keyalg RSA -keysize 2048 -validity 10000
+keytool -genkey -v -keystore Smallhouseplan.keystore -alias SmallhouseMoblieApps -keyalg RSA -keysize 2048 -validity 10000
 
-jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore EstimatorApp.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk EstimatorMoblieApps
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore Smallhouseplan.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk SmallhouseMoblieApps
+
 
 ~/Android/Sdk/build-tools/30.0.3/zipalign -v 4 platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk signed.apk
